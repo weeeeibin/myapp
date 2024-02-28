@@ -1,0 +1,41 @@
+.input {
+    display: block;
+    margin: 0 auto;
+    padding: 9px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #434343;
+    background-color: #fafafa;
+    box-shadow: 0 0 3px #e9e9e9 inset;
+    border: 1px solid #dfdfdf;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.input_wrapper {
+    width: 400px;
+    position: relative;
+}
+
+.search_wrapper {
+    width: 100%;
+    position: absolute;
+    z-index: 99999;
+    background-color: #fff;
+    list-style-type: none;
+}
+
+.search_wrapper>li {
+    padding: 6px 13px;
+    cursor: pointer;
+}
+
+.search_wrapper>li:hover {
+    background-color: #dfdfdf;
+}

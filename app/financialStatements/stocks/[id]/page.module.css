@@ -1,0 +1,21 @@
+.card {
+    color: #434343;
+    background: #fafafa;
+    border: 1px solid #dfdfdf;
+    padding: 15px 18px;
+    margin-bottom: 6px;
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}

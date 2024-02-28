@@ -1,0 +1,24 @@
+.ul {
+    list-style-type: none;
+    text-align: left;
+    border-left: 1px solid rgb(223, 223, 223);
+    height: 572px;
+}
+
+.ul > li{
+    color: rgb(67, 67, 67);
+    width: 100%;
+    cursor: pointer;
+    margin-left: -1px;
+    font-size: 13px;
+    line-height: 160%;
+    position: relative;
+    padding: 9px 15px;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.ul > li[data-isactive="true"]{
+    color: rgb(3, 134, 244);
+    border-color: rgb(3, 134, 244);
+}
