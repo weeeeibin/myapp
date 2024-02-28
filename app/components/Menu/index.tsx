@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styles from './index.module.css'
-import Router, { useRouter } from "next/navigation"
+import Router, { useParams, usePathname, useRouter } from "next/navigation"
 
 type Props = {
     items: Array<IMenuItems>
@@ -12,7 +12,8 @@ export default function Menu(props: Props) {
 
     const { items } = props;
 
-    const router = useRouter()
+    const router = useRouter();
+    const pathName = usePathname();
     const [selectIndex, setSelectIndex] = useState<Number | undefined>(undefined);
 
     const onClick = (index: number) => {
@@ -20,6 +21,14 @@ export default function Menu(props: Props) {
         const { url } = items[index];
         router.push(Boolean(url) ? url : '/404')
     }
+
+    useMemo(() => {
+        items.forEach((item, index) => {
+            if (pathName.includes(item.key)) {
+                setSelectIndex(index);
+            }
+        })
+    }, [])
 
     return (
         <ul className={styles.ul_wrapper}>

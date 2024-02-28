@@ -2,5 +2,6 @@ interface IMenuItems {
     title: string,
     iconText: string
     url: string
-    color: string
+    color: string,
+    key: string
 }
