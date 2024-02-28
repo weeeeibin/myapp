@@ -80,7 +80,7 @@ export default function page({ }: Props) {
                     type: 'shadow'
                 },
                 axisLabel: {
-                    interval: 12,
+                    interval: 11,
                     formatter: function (value: string) {
                         return value.substring(0, 4)
                     }
