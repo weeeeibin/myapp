@@ -11,7 +11,7 @@ export default function FinancialStatementsLayout({
     const menuItems: Array<ISecMenuItems> = [
         {
             title: "每月營收",
-            url: "/financialStatements/stocks/2033"
+            url: "/financialStatements/stocks/2330"
         },
         {
             title: "每股盈餘",
