@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import SecMenu from "../components/SecMenu";
 import styles from "./layout.module.css";
 
@@ -27,9 +28,11 @@ export default function FinancialStatementsLayout({
     ]
 
     return (
-        <div className={styles.wrapper}>
-            <SecMenu items={menuItems} />
-            {children}
-        </div>
+        <Suspense fallback="loading...">
+            <div className={styles.wrapper}>
+                <SecMenu items={menuItems} />
+                {children}
+            </div>
+        </Suspense>
     )
 }

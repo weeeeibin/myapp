@@ -4,6 +4,7 @@ import "./globals.css";
 import Menu from "./components/Menu";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import Search from "./components/Search";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -21,61 +22,71 @@ export default function RootLayout({
 			title: "最新動態",
 			iconText: "B",
 			url: "/financialStatements/stocks/2330",
-			color: "#CA0813"
+			color: "#CA0813",
+			key: "/financialStatements/"
 		},
 		{
 			title: "股票健康",
 			iconText: "F",
 			url: "",
-			color: "#198420"
+			color: "#198420",
+			key: "股票健康"
 		},
 		{
 			title: "財務報表",
 			iconText: "C",
 			url: "",
-			color: "#E67820"
+			color: "#E67820",
+			key: "財務報表"
 		},
 		{
 			title: "獲利能力",
 			iconText: "D",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "獲利能力"
 		},
 		{
 			title: "安全性分析",
 			iconText: "E",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "安全性分析"
 		},
 		{
 			title: "成長力分析",
 			iconText: "Q",
 			url: "",
-			color: "#743079"
+			color: "#743079",
+			key: "成長力分析"
 		},
 		{
 			title: "價值評估",
 			iconText: "J",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "價值評估"
 		},
 		{
 			title: "董監與籌碼",
 			iconText: "G",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "董監與籌碼"
 		},
 		{
 			title: "關鍵指標",
 			iconText: "H",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "關鍵指標"
 		},
 		{
 			title: "產品組合",
 			iconText: "I",
 			url: "",
-			color: "#345BA7"
+			color: "#345BA7",
+			key: "產品組合"
 		},
 	]
 
@@ -90,9 +101,11 @@ export default function RootLayout({
 						<div className={styles.menu}>
 							<Menu items={menuItems} />
 						</div>
-						<div className={styles.container}>
-							{children}
-						</div>
+						<Suspense fallback={"loading..."}>
+							<div className={styles.container}>
+								{children}
+							</div>
+						</Suspense>
 					</div>
 				</AppRouterCacheProvider>
 			</body>
