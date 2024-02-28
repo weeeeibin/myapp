@@ -28,7 +28,7 @@ export default function FinancialStatementsLayout({
     ]
 
     return (
-        <Suspense fallback="loading...">
+        <Suspense fallback={"loading"}>
             <div className={styles.wrapper}>
                 <SecMenu items={menuItems} />
                 {children}

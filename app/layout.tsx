@@ -101,11 +101,9 @@ export default function RootLayout({
 						<div className={styles.menu}>
 							<Menu items={menuItems} />
 						</div>
-						<Suspense fallback={"loading..."}>
-							<div className={styles.container}>
-								{children}
-							</div>
-						</Suspense>
+						<div className={styles.container}>
+							{children}
+						</div>
 					</div>
 				</AppRouterCacheProvider>
 			</body>
